@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TuneFinder — Search Any Song</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1><span class="logo-note">🎵</span> TuneFinder</h1>
+    <p>Search any song — discover artist, album, artwork & instantly preview or download legally</p>
+  </header>
+
+  <div class="info-banner">
+    ℹ️ <strong>Two legal modes:</strong>
+    <strong>Streaming &amp; Previews</strong> searches Apple's official catalog with 30-second previews + deep links to Apple Music.
+    <strong>Free Legal Downloads</strong> searches the
+    <a href="https://archive.org/details/audio" target="_blank" rel="noopener">Internet Archive</a>'s
+    public-domain &amp; Creative Commons audio collections for tracks you can actually download.
+  </div>
+
+  <div class="mode-switch">
+    <div class="mode-segment" id="modeSegment" role="tablist">
+      <button data-mode="stream" class="active" role="tab" aria-selected="true">🎧 Streaming &amp; Previews</button>
+      <button data-mode="free" role="tab" aria-selected="false">⬇️ Free Legal Downloads</button>
+    </div>
+  </div>
+  <div class="mode-help" id="modeHelp">
+    Streaming mode: 30-second preview + links to Apple Music / iTunes for the full song.
+  </div>
+
+  <div class="search-box">
+    <form id="searchForm">
+      <input type="text" id="searchInput" placeholder="Type a song, artist, or album…" autocomplete="off">
+      <button type="submit">🔍 Search</button>
+    </form>
+    <div class="examples" id="examples"></div>
+  </div>
+
+  <div id="status" class="status" aria-live="polite"></div>
+  <div id="results" class="results"></div>
+
+  <div class="modal-overlay" id="modal" aria-hidden="true">
+    <div class="modal" id="modalContent"></div>
+  </div>
+
+  <footer class="site-footer">
+    Streaming data: Apple
+    <a href="https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/" target="_blank" rel="noopener">iTunes Search API</a> ·
+    Free downloads:
+    <a href="https://archive.org/details/audio" target="_blank" rel="noopener">Internet Archive Audio Archive</a> ·
+    Built for legitimate music discovery
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
